@@ -16,7 +16,7 @@
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string>Show {query} on OpenStreeetMaps</string>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -26,7 +26,7 @@
 				<key>modifiers</key>
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
-				<string>Show {query} on Google Maps</string>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -50,9 +50,9 @@
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
-				<string>https://www.openstreetmap.org/search?query={query}</string>
+				<string>{query}</string>
 				<key>utf8</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -77,11 +77,11 @@
 				<key>keyword</key>
 				<string>ipinfo</string>
 				<key>queuedelaycustom</key>
-				<integer>3</integer>
+				<integer>5</integer>
 				<key>queuedelayimmediatelyinitially</key>
 				<false/>
 				<key>queuedelaymode</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
@@ -117,7 +117,7 @@ ipinfo('{query}');</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
-				<string>https://maps.google.com?q={query}</string>
+				<string>{query}</string>
 				<key>utf8</key>
 				<true/>
 			</dict>
@@ -136,7 +136,7 @@ ipinfo('{query}');</string>
 		<key>7E9E510D-B990-42C8-84A8-748BDB8B0E9E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>260</integer>
+			<integer>150</integer>
 			<key>ypos</key>
 			<integer>250</integer>
 		</dict>
