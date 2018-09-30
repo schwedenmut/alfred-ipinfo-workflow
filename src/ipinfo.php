@@ -32,7 +32,6 @@ function createJSON($contentArray ) {
 	foreach ($contentArray as $key => $value) {
 		if (!empty($value) && (preg_match('(postal|country|loc|phone)', $key) === 0)) {
 			$json .= '{"title": "'.$value.'",';
-			$json .= '"valid": false,';
 			switch ($key) {
 				case 'city':
 				$json .= '"subtitle": "Postcode: '.$contentArray["postal"].'",';
@@ -46,7 +45,8 @@ function createJSON($contentArray ) {
 				break;
 				case 'org':
 				$json .= '"icon": {"path": "building-regular.png"},';
-				$json .= '"mods": {"alt": {"valid": true, "arg": "https://www.google.com/search?q='.trim(strstr($value, ' ')).'", "subtitle": "Search '.$value.' on Google.com"},"cmd": {"arg": "https://duckduckgo.com/'.trim(strstr($value, ' ')).'", "subtitle": "Search '.$value.' on DuckDuckGo.com"}},';
+				$value = trim(strstr($value, ' '));
+				$json .= '"mods": {"alt": {"valid": true, "arg": "https://www.google.com/search?q='.$value.'", "subtitle": "Search '.$value.' on Google.com"},"cmd": {"arg": "https://duckduckgo.com/'.$value.'", "subtitle": "Search '.$value.' on DuckDuckGo.com"}},';
 				break;
 				case 'hostname':
 				$json .= '"icon": {"path": "server-solid.png"},';
@@ -72,9 +72,9 @@ function isValidDomain($request) {
 	$valid = preg_match('/(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/m',$request,$matches);
 	if ($valid == 1) {
 		$matches = explode(".", $matches[0]);
-		while (count($matches) > 2) {
+		/*while (count($matches) > 2) {
 			array_shift($matches);
-		}
+		}*/
 		return gethostbyname(implode(".",$matches));
 	} else {
 		return false;

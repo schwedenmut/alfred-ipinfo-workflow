@@ -8,8 +8,20 @@
 	<string>Internet</string>
 	<key>connections</key>
 	<dict>
+		<key>586C732D-6C94-44ED-AE94-CD617E7DF41E</key>
+		<array/>
 		<key>7E9E510D-B990-42C8-84A8-748BDB8B0E9E</key>
 		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>586C732D-6C94-44ED-AE94-CD617E7DF41E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>C38A6CA8-CAA2-40DA-91B4-BA49D231870D</string>
@@ -35,13 +47,30 @@
 	<key>createdby</key>
 	<string>Marc Schwede</string>
 	<key>description</key>
-	<string>Retrieve location for a specified IP</string>
+	<string>Retrieve location for a specified IP or domain</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
 	<string>Ipinfo</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string></string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>586C732D-6C94-44ED-AE94-CD617E7DF41E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -130,9 +159,27 @@ ipinfo('{query}');</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string># Ipinfo Workflow for [Alfred 3](https://www.alfredapp.com)
+You can get the location of a given ip adress or domain from ipinfo.io. Currently if no ip is provided, your own will be searched by default.  
+Returned locations can be displayed in ***OpenStreetMaps*** or ***Google Maps***.
+Hostnames can be openend in your default browser via ***http/s***, organizations, city and region information can be searched via ***Google*** or ***DuckDuckGo***.
+
+# Commands
+To search for an ip adress just type in `ipinfo` followed bei either nothing to query your own ip adress, a valid public ip adress or a URI such as `www.gitlab.com`. 
+You can display the location in _**OpenStreetMap**_ by hitting `cmd + enter` (⌘⏎) or in _**Google Maps**_ by operating `alt + enter` (⌥⏎).
+Also you can also interact with other provided information via `cmd` (⌘), `alt` (⌥) or just copy all those information by pressing `enter` (⏎).
+
+# Licensing, appreciation
+Icons are from [Font Awesome](https://fontawesome.com) under the [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).</string>
 	<key>uidata</key>
 	<dict>
+		<key>586C732D-6C94-44ED-AE94-CD617E7DF41E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>560</integer>
+			<key>ypos</key>
+			<integer>70</integer>
+		</dict>
 		<key>7E9E510D-B990-42C8-84A8-748BDB8B0E9E</key>
 		<dict>
 			<key>xpos</key>
@@ -155,6 +202,8 @@ ipinfo('{query}');</string>
 			<integer>200</integer>
 		</dict>
 	</dict>
+	<key>version</key>
+	<string></string>
 	<key>webaddress</key>
 	<string>www.schwedenmut.de</string>
 </dict>
